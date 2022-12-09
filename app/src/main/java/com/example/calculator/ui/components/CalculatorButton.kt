@@ -30,7 +30,7 @@ fun CalculatorButton(
 
 @Preview
 @Composable
-private fun PreviewCalculatorButton() {
+private fun CalculatorButtonPreview() {
     CalculatorButton(
         buttonLabel = "AC",
         onClick = { },
