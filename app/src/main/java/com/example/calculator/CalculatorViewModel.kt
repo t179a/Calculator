@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import java.math.BigDecimal
 import javax.inject.Inject
 
 @HiltViewModel
@@ -109,7 +110,7 @@ class CalculatorViewModel @Inject constructor() : ViewModel() {
             ArithmeticOperation.DIVIDED -> {
                 val calculatedResult: Double =
                     _calculatorUiState.value.inputFirstNumber.toDouble() / _calculatorUiState.value.inputLastNumber.toDouble()
-                val newNumber: String = adjustNumberOfDigits(calculatedResult.toString())
+                val newNumber: String = BigDecimal.valueOf(calculatedResult).toPlainString()
                 _calculatorUiState.value =
                     _calculatorUiState.value.copy(currentDisplayedNumber = newNumber)
             }
