@@ -1,6 +1,6 @@
 package com.example.calculator
 
-enum class CalculatorOperation {
+enum class ArithmeticOperation {
     PLUS,
     MINUS,
     TIMES,
