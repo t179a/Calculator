@@ -110,7 +110,8 @@ class CalculatorViewModel @Inject constructor() : ViewModel() {
             ArithmeticOperation.DIVIDED -> {
                 val calculatedResult: Double =
                     _calculatorUiState.value.inputFirstNumber.toDouble() / _calculatorUiState.value.inputLastNumber.toDouble()
-                val newNumber: String = BigDecimal.valueOf(calculatedResult).toPlainString()
+                val newNumber: String =
+                    adjustNumberOfDigits(BigDecimal.valueOf(calculatedResult).toPlainString())
                 _calculatorUiState.value =
                     _calculatorUiState.value.copy(currentDisplayedNumber = newNumber)
             }
