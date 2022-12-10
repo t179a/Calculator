@@ -1,9 +1,11 @@
 package com.example.calculator
 
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
+@HiltViewModel
 class CalculatorViewModel : ViewModel() {
     private var _calculatorUiState = MutableStateFlow(CalculatorUiState())
     val calculatorUiState = _calculatorUiState.asStateFlow()
